@@ -19,13 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="user : ${users}">
-                <td th:text="${user.getUserId()}"></td>
-                <td th:text="${user.getUserName()}"></td>
-                <td>
-                    <span th:if="${user.getRoleId() == 1}">一般ユーザー</span>
-                    <span th:if="${user.getRoleId() == 2}">管理者ユーザー</span>
-                </td>
+            <tr th:each="todo : ${todos}">
+                <td th:text="${todo.getid()}"></td>
+                <td th:text="${todo.gettitle()}"></td>
+                 <td th:text="${todo.getpriority()}"></td>
+                  <td th:text="${todo.getstatus()}"></td>
+               
             </tr>
         </tbody>
     </table>

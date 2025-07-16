@@ -14,15 +14,15 @@ import lombok.Data;
 public class ToDo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "todo_id")
-    private Integer todoId;
+    @Column(name = "id")
+    private Integer Id;
 
-    @Column(name = "todo_title")
-    private String todotitle;
+    @Column(name = "title")
+    private String title;
 
-    @Column(name = "todo_priority")
-    private String todopriority;
+    @Column(name = "priority")
+    private String priority;
 
-    @Column(name = "todo_status")
-    private String todostatus;
+    @Column(name = "status")
+    private String status;
 }
