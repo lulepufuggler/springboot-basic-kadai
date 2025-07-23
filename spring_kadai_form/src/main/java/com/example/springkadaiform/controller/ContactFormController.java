@@ -1,7 +1,5 @@
 package com.example.springkadaiform.controller;
 
-import org.springframework.core.Conventions;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,22 +26,23 @@ public class ContactFormController {
     public String confirm(
             @Validated ContactForm form, 
             BindingResult result,
-            RedirectAttributes redirectAttributes) {
+            RedirectAttributes redirectAttributes,Model model) {
         
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.contactForm", result);
             redirectAttributes.addFlashAttribute("contactForm", form);
             return "redirect:/form";
             
+        }
 
          // バリデーションOKの場合は、確認画面に遷移
-           model.addAttribute("confirm", form);
+           model.addAttribute("confirm", new ContactForm());
             return "confirmView"; 
             
         }
     }
     
-}
+
     
         
 
