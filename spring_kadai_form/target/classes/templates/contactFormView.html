@@ -9,15 +9,18 @@
 
 <body>    
 	 <h1>お問い合わせフォーム</h1>
-    <form action="send_mail.php" method="post">
+    <form th:action="@{/form}" method="post" th:object="${ContactFormController}">
         <label for="name">お名前:</label>
         <input type="text" id="name" name="name" required><br><br>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></div>
 
         <label for="email">メールアドレス:</label>
         <input type="text" id="email" name="email" required><br><br>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></div>
 
         <label for="message">お問い合わせ内容:</label><br>
         <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
+        <div th:if="${#fields.hasErrors('message')}" th:errors="*{message}" style="color: red;"></div>
 
         <button type="submit">送信</button>
     </form>
