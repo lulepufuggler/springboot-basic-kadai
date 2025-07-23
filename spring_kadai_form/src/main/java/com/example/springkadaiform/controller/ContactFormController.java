@@ -16,7 +16,6 @@ public class ContactFormController {
 	 // お問い合わせフォーム
     @GetMapping("/form")
     public String form(Model model) {
-        model.addAttribute("contactform", new ContactForm());
         return "contactFormView";
     }
     

@@ -9,7 +9,7 @@
 
 <body>    
 	 <h1>お問い合わせフォーム</h1>
-    <form th:action="@{/form}" method="post" th:object="${ContactForm}">
+    <form th:action="@{/form}" method="post" th:object="${contactForm}">
         <label for="name">お名前:</label>
         <input type="text" id="name" name="name" required><br><br>
         <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></div>
