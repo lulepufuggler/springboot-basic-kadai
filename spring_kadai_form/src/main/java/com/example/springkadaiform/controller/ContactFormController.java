@@ -26,7 +26,7 @@ public class ContactFormController {
     public String confirm(
             @Validated ContactForm form, 
             BindingResult result,
-            RedirectAttributes redirectAttributes,Model model) {
+            RedirectAttributes redirectAttributes) {
         
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.contactForm", result);
@@ -36,7 +36,6 @@ public class ContactFormController {
         }
 
          // バリデーションOKの場合は、確認画面に遷移
-           model.addAttribute("confirm", new ContactForm());
             return "confirmView"; 
             
         }
