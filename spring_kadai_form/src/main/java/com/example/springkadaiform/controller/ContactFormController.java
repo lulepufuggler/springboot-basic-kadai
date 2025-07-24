@@ -12,13 +12,14 @@ import com.example.springkadaiform.form.ContactForm;
 
 @Controller
 public class ContactFormController {
-
-	 // お問い合わせフォーム
+    
+    // お問い合わせフォーム
     @GetMapping("/form")
     public String form(Model model) {
+       
+        model.addAttribute("contactForm", new ContactForm());
         return "contactFormView";
     }
-    
     
     // 入力確認画面
     @PostMapping("/confirm")
@@ -31,17 +32,12 @@ public class ContactFormController {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.contactForm", result);
             redirectAttributes.addFlashAttribute("contactForm", form);
             return "redirect:/form";
-            
         }
-
-         // バリデーションOKの場合は、確認画面に遷移
-            return "confirmView"; 
-            
-        }
+        
+        // バリデーションOKの場合は、確認画面に遷移
+        return "confirmView"; 
     }
-    
-
-    
+}
         
 
     
