@@ -2,7 +2,6 @@ package com.example.springkadaiform.form;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
@@ -17,6 +16,6 @@ public class ContactForm {
     private String email;
 
     // お問い合わせ内容
-	@NotNull(message = "お問い合わせ内容を入力してください。")
+	@NotBlank(message = "お問い合わせ内容を入力してください。")
     private String message;
 }
