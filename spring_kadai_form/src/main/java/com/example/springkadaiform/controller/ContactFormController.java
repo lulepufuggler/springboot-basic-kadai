@@ -17,16 +17,16 @@ import jakarta.validation.Valid;
 public class ContactFormController {
     
     // お問い合わせフォーム
-    @GetMapping("/Contactform")
+    @GetMapping("/form")
     public String showForm(Model model) {
         // 新しいContactFormオブジェクトをモデルに追加
         model.addAttribute("contactForm", new ContactForm());
-        return "form";
+        return "contactFormView";
        
     }
     
     // 入力確認画面
-    @PostMapping("/Contactconfirm")
+    @PostMapping("/confirm")
     public String confirmForm(@Valid @ModelAttribute ContactForm contactForm,
             BindingResult bindingResult,
             Model model,
@@ -42,7 +42,7 @@ return "redirect:/form";
 
 // バリデーションOKの場合、確認画面を表示
 model.addAttribute("contactForm", contactForm);
-return "confirm";
+return "confirmView";
 }
 
 	}
