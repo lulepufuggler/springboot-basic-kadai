@@ -19,15 +19,15 @@
         <tbody>
 			<tr>
                  <td>お名前</td>
-                <td th:text="${form.name}"></td>
+                <td th:text="${contactForm.getname}"></td>
             </tr>
             <tr>
                 <td>メールアドレス</td>
-                <td th:text="${form.email}"></td>
+                <td th:text="${contactForm.getemail}"></td>
             </tr>
             <tr>
                 <td>お問い合わせ内容</td>
-                <td th:text="${form.message}"></td>
+                <td th:text="${contactForm.getmessage}"></td>
             </tr>
         </tbody>
     </table>

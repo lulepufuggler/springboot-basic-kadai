@@ -19,8 +19,11 @@ public class ContactFormController {
     // お問い合わせフォーム
     @GetMapping("/form")
     public String showForm(Model model) {
+    	if (!model.containsAttribute("contactForm")) {
         // 新しいContactFormオブジェクトをモデルに追加
         model.addAttribute("contactForm", new ContactForm());
+        
+    	}
         return "contactFormView";
        
     }
